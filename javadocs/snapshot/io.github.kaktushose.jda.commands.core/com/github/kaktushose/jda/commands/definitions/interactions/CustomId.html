@@ -68,6 +68,7 @@ loadScripts(document, 'script');</script>
 <ol class="toc-list">
 <li><a href="#BOUND_CUSTOM_ID_REGEX" tabindex="0">BOUND_CUSTOM_ID_REGEX</a></li>
 <li><a href="#INDEPENDENT_CUSTOM_ID_REGEX" tabindex="0">INDEPENDENT_CUSTOM_ID_REGEX</a></li>
+<li><a href="#INVALID" tabindex="0">INVALID</a></li>
 </ol>
 </li>
 <li><a href="#constructor-detail" tabindex="0">Constructor Details</a>
@@ -139,6 +140,9 @@ or the literal <code>independent</code>.</dd>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/23/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second odd-row-color"><code><a href="#INDEPENDENT_CUSTOM_ID_REGEX" class="member-name-link">INDEPENDENT_CUSTOM_ID_REGEX</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>static final <a href="CustomId.html" title="class in com.github.kaktushose.jda.commands.definitions.interactions">CustomId</a></code></div>
+<div class="col-second even-row-color"><code><a href="#INVALID" class="member-name-link">INVALID</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
 </div>
 </section>
 </li>
@@ -189,8 +193,8 @@ or the literal <code>independent</code>.</dd>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Constructs a new <a href="CustomId.html" title="class in com.github.kaktushose.jda.commands.definitions.interactions"><code>CustomId</code></a> from the given <a href="https://docs.jda.wiki/net/dv8tion/jda/api/events/interaction/GenericInteractionCreateEvent.html" title="class or interface in net.dv8tion.jda.api.events.interaction" class="external-link"><code>GenericInteractionCreateEvent</code></a>.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="CustomId.html" title="class in com.github.kaktushose.jda.commands.definitions.interactions">CustomId</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#fromMerged(java.lang.String)" class="member-name-link">fromMerged</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/23/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;customId)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static @NotNull <a href="CustomId.html" title="class in com.github.kaktushose.jda.commands.definitions.interactions">CustomId</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#fromMerged(java.lang.String)" class="member-name-link">fromMerged</a><wbr>(@NotNull <a href="https://docs.oracle.com/en/java/javase/23/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;customId)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Constructs a new <a href="CustomId.html" title="class in com.github.kaktushose.jda.commands.definitions.interactions"><code>CustomId</code></a> from the given String.</div>
 </div>
@@ -275,6 +279,14 @@ or the literal <code>independent</code>.</dd>
 </div>
 </section>
 </li>
+<li>
+<section class="detail" id="INVALID">
+<h3>INVALID</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="CustomId.html" title="class in com.github.kaktushose.jda.commands.definitions.interactions">CustomId</a></span>&nbsp;<span class="element-name">INVALID</span></div>
+</div>
+</section>
+</li>
 </ul>
 </section>
 </li>
@@ -346,7 +358,9 @@ or the literal <code>independent</code>.</dd>
 <section class="detail" id="fromMerged(java.lang.String)">
 <h3>fromMerged</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="CustomId.html" title="class in com.github.kaktushose.jda.commands.definitions.interactions">CustomId</a></span>&nbsp;<span class="element-name">fromMerged</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/23/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;customId)</span></div>
+<div class="member-signature"><span class="annotations">@NotNull
+</span><span class="modifiers">public static</span>&nbsp;<span class="return-type">@NotNull <a href="CustomId.html" title="class in com.github.kaktushose.jda.commands.definitions.interactions">CustomId</a></span>&nbsp;<span class="element-name">fromMerged</span><wbr><span class="parameters">(@NotNull
+ @NotNull <a href="https://docs.oracle.com/en/java/javase/23/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;customId)</span></div>
 <div class="block">Constructs a new <a href="CustomId.html" title="class in com.github.kaktushose.jda.commands.definitions.interactions"><code>CustomId</code></a> from the given String.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
