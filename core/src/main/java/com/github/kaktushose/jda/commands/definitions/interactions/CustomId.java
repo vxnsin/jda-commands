@@ -17,7 +17,9 @@ public record CustomId(@NotNull String runtimeId, @NotNull String definitionId) 
     private static final String INDEPENDENT_ID = "independent";
     public static final String BOUND_CUSTOM_ID_REGEX = "^jdac\\.[0-9a-fA-F-]{36}\\.-?\\d+$";
     public static final String INDEPENDENT_CUSTOM_ID_REGEX = "^jdac\\.%s\\.-?\\d+$".formatted(INDEPENDENT_ID);
+public static final CustomId INVALID = new CustomId("00000000-0000-0000-0000-000000000000", "-1");
 
+    
     public CustomId {
         if (!runtimeId.matches("[0-9a-fA-F-]{36}") && !runtimeId.equals(INDEPENDENT_ID)) {
             throw new IllegalArgumentException("Invalid runtime id! Must either be a UUID or \"%s\"".formatted(INDEPENDENT_ID));
@@ -46,14 +48,14 @@ public record CustomId(@NotNull String runtimeId, @NotNull String definitionId) 
     ///
     /// @param customId the custom id String
     /// @return the [CustomId]
-    public static CustomId fromMerged(String customId) {
-        if (isInvalid(customId)) {
-            return null;
+    @NotNull
+    public static CustomId fromMerged(@NotNull String customId) {
+            if (isInvalid(customId)) {
+                return new CustomId("00000000-0000-0000-0000-000000000000", "-1"); 
+            }
+            var split = customId.split("\\.");
+            return new CustomId(split[1], split[2]);
         }
-        var split = customId.split("\\.");
-        return new CustomId(split[1], split[2]);
-    }
-
     /// Constructs a new runtime-independent [CustomId] from the given definition id.
     ///
     /// @param definitionId the definition id to construct the [CustomId] from
