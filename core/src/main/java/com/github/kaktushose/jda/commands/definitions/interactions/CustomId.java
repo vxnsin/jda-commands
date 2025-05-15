@@ -49,7 +49,7 @@ public record CustomId(@NotNull String runtimeId, @NotNull String definitionId) 
     @NotNull
     public static CustomId fromMerged(@NotNull String customId) {
         if (isInvalid(customId)) {
-            throw new IllegalArgumentException("Provided custom id is invalid!");
+            return;
         }
         var split = customId.split("\\.");
         return new CustomId(split[1], split[2]);
