@@ -46,8 +46,7 @@ public record CustomId(@NotNull String runtimeId, @NotNull String definitionId) 
     ///
     /// @param customId the custom id String
     /// @return the [CustomId]
-    @NotNull
-    public static CustomId fromMerged(@NotNull String customId) {
+    public static CustomId fromMerged(String customId) {
         if (isInvalid(customId)) {
             return null;
         }
